@@ -13,6 +13,8 @@
 mkdir bitrix/modules/x.core;  
 cd bitrix/modules/x.core/;  
 git clone https://github.com/Suntechnic/xCore .
+или
+git clone git@github.com:Suntechnic/xCore.git .
 ```
 
 Переходим на https:/site.my/bitrix/admin/partner_modules.php?lang=ru и устанавливаем модуль.
@@ -22,7 +24,7 @@ git clone https://github.com/Suntechnic/xCore .
 cd -;
 mkdir local;
 mkdir local/x;
-cp bitrix/modules/x.api/x.exemple/config.php local/x/config.php;  
+cp bitrix/modules/x.core/x.exemple/config.php local/x/config.php;  
 ```
 
 При отсуствии создаем /local/php_interface/init.php:
