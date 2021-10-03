@@ -157,7 +157,7 @@ define('S_P_SOURCESDUMP',  	S_.P_SOURCESDUMP);
 // autoload
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Bitrix\Main\Loader::registerAutoLoadClasses('x.api',  array(
+Bitrix\Main\Loader::registerAutoLoadClasses('x.core',  array(
         // классы расширеня
         '\X\IBlockProperties\ElementWithDescription'=> 'classes/general/iblockproperties/elementwithdescription.php',
         

@@ -4,12 +4,12 @@ $strPath2Lang = str_replace("\\", "/", __FILE__);
 $strPath2Lang = substr($strPath2Lang, 0, strlen($strPath2Lang)-strlen("/install/index.php"));
 include(GetLangFileName($strPath2Lang."/lang/", "/install/index.php"));
 
-class x_api extends CModule {
+class x_core extends CModule {
 	
 	var $MODULE_SPACE = "x";
-	var $MODULE_UID = "api";
+	var $MODULE_UID = "core";
 	var $MODULE_TYPE = "M";
-	var $MODULE_CODE = "API";
+	var $MODULE_CODE = "CORE";
 	var $MODULE_EVENTS = [
 			[
 					'module' => 'iblock',
