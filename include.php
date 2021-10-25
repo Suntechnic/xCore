@@ -122,7 +122,7 @@ defined('APPLICATION_ENV') || define('APPLICATION_ENV', 'production');
 define('P_X',           XDEFINE_DIRS['X']?P_.XDEFINE_DIRS['X']:P_.'/x'); // X - имплементации модели и сущностей
 define('P_INTERFACE',   XDEFINE_DIRS['INTERFACE']?P_.XDEFINE_DIRS['INTERFACE']:P_.'/interface'); // интерфейс AJAX и REST сервисов
 define('P_LAYOUT',    	XDEFINE_DIRS['LAYOUT']?P_.XDEFINE_DIRS['LAYOUT']:P_.'/templates/.default'); // шаблон шаблонов
-define('P_MEDIA',    	XDEFINE_DIRS['MEDIA']?P_.XDEFINE_DIRS['MEDIA']:P_.'/sources'); // медифайлы
+define('P_MEDIA',    	XDEFINE_DIRS['MEDIA']?P_.XDEFINE_DIRS['MEDIA']:P_.'/assets'); // медифайлы
 define('P_CSS',     	XDEFINE_DIRS['CSS']?P_.XDEFINE_DIRS['CSS']:P_MEDIA.'/css'); // папка стилей
 define('P_FONTS',     	XDEFINE_DIRS['FONTS']?P_.XDEFINE_DIRS['FONTS']:P_MEDIA.'/fonts'); // папка с шрифтами
 define('P_JS',    		XDEFINE_DIRS['JS']?P_.XDEFINE_DIRS['JS']:P_MEDIA.'/js'); // папка скриптов
