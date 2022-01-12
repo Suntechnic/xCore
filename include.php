@@ -193,6 +193,8 @@ if (APPLICATION_ENV == 'dev' || APPLICATION_ENV == 'combo') { // сервер р
         $configuration->saveConfiguration();
     }
     
+    define('VUEJS_DEBUG', true);
+    
     if (class_exists('Kint')) \Kint\Renderer\RichRenderer::$folder = true;
 } else { // глушим отладку если она есть
     if ($arExceptionHandling['debug']) {
