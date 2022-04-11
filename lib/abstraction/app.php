@@ -176,6 +176,30 @@ namespace X\Abstraction {
             
         }
         #
+        
+        /* генерирует уникальные id
+        $htmlID = \XApp::getInstance()->newID();
+        */
+        public function newID ($name='xid',$rndlen=8)
+        {
+            $id = $name.'_'.randString($rndlen);
+            while ($this->_memoizing['getID'][$id]) {
+                $id = $name.'_'.randString($rndlen);
+            }
+            $this->$_memoizing['lastID'] = $id;
+            $this->$_memoizing['getID'][$id] = true;
+            return $id;
+        }
+        #
+        
+        /* возвращает последний сгенерированный id
+        \XApp::getInstance()->newID();
+        */
+        public static function lastID ()
+        {
+            return $this->_memoizing['lastID'];
+        }
+        #
     }
 }
 
