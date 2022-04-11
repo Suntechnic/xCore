@@ -113,7 +113,7 @@ namespace X\Abstraction {
         }
         #
         
-        /*
+        /*static
          * добавляет стиль
         */
         public function addCssSource($path,$place='head',$attrs=[]) { if($this->_register($path)) return;
@@ -195,7 +195,7 @@ namespace X\Abstraction {
         /* возвращает последний сгенерированный id
         \XApp::getInstance()->newID();
         */
-        public static function lastID ()
+        public function lastID ()
         {
             return $this->_memoizing['lastID'];
         }
