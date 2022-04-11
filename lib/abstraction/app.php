@@ -186,8 +186,8 @@ namespace X\Abstraction {
             while ($this->_memoizing['getID'][$id]) {
                 $id = $name.'_'.randString($rndlen);
             }
-            $this->$_memoizing['lastID'] = $id;
-            $this->$_memoizing['getID'][$id] = true;
+            $this->_memoizing['lastID'] = $id;
+            $this->_memoizing['getID'][$id] = true;
             return $id;
         }
         #
