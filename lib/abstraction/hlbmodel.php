@@ -71,12 +71,12 @@ namespace X\Abstraction {
             while ($dct = $res->fetch()) $lst[] = $dct;
             
             $cacheKey = false;
-            \XDebug::log(
-                    array(
-                            'options'=>$arParams
-                        ),
-                    'call lst for '.$this->EntityClass.($cacheKey?' (from cache)':'')
-                );
+            //\XDebug::log(
+            //        array(
+            //                'options'=>$arParams
+            //            ),
+            //        'call lst for '.$this->EntityClass.($cacheKey?' (from cache)':'')
+            //    );
             
 			return $lst;
         }
@@ -104,12 +104,12 @@ namespace X\Abstraction {
             while ($dct = $res->fetch()) $ref[$dct[$key]] = $dct;
             
             $cacheKey = false;
-            \XDebug::log(
-                    array(
-                            'options'=>$arParams
-                        ),
-                    'call lst for '.$this->EntityClass.($cacheKey?' (from cache)':'')
-                );
+            //\XDebug::log(
+            //        array(
+            //                'options'=>$arParams
+            //            ),
+            //        'call lst for '.$this->EntityClass.($cacheKey?' (from cache)':'')
+            //    );
             
 			return $ref;
 		}
