@@ -174,8 +174,10 @@ Bitrix\Main\Loader::registerAutoLoadClasses('x.core',  array(
         
         // протомодель
         '\X\Abstraction\Protomodel\Filestorage'     => 'lib/abstraction/protomodel/filestorage.php',
-        '\X\Abstraction\Protomodel\Stringstorage'   => 'lib/abstraction/protomodel/stringstorage.php'
+        '\X\Abstraction\Protomodel\Stringstorage'   => 'lib/abstraction/protomodel/stringstorage.php',
         
+        // мастера
+        '\X\Wizards\HLBStorages'                    => 'lib/wizards/hlbstorages.php',
     ));
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
