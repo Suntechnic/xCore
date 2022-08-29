@@ -17,6 +17,7 @@ git clone https://github.com/Suntechnic/xCore .
 git clone git@github.com:Suntechnic/xCore.git .
 ```
 
+
 Переходим на https:/site.my/bitrix/admin/partner_modules.php?lang=ru и устанавливаем модуль.
 
 Создаем конфигурационные файлы:
