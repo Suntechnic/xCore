@@ -5,7 +5,6 @@
 Список полей:
 UF_NAME	Строка
 UF_FILE	Файл
-UF_URL	Строка
 UF_XML_ID	Строка
 */
 
@@ -45,33 +44,29 @@ namespace X\Abstraction\Protomodel {
         //
         private function __procElement ($arElement) {
             $arElement['NAME'] = $arElement['UF_NAME'];
-            // файл и ссылка
-            if ($arElement['UF_URL']) {
-                $arElement['SRC'] = $arElement['UF_URL'];
-            } else if ($arElement['UF_FILE']) {
-                $arElement['UF_FILE'] = \CFile::GetFileArray($arElement['UF_FILE']);
-                $arElement['SRC'] = $arElement['UF_FILE']['SRC'];
-                $arElement['S_SRC'] = S_.$arElement['SRC'];
-                $size = intval($arElement['UF_FILE']['FILE_SIZE']);
-                
-                $arElement['SIZE'] = [
-                        'B' => $size,
-                        'KiB' => $size/1024,
-                        'MiB' => ($size/1024)/1024,
-                        'GiB' => (($size/1024)/1024)/1024
-                    ];
-                foreach ($arElement['SIZE'] as $unit=>$size) {
-                    if ($size > 1) {
-                        $arElement['SIZE']['ACTUAL_SIZE'] = $size;
-                        $arElement['SIZE']['ACTUAL_UNIT'] = $unit;
-                    } else break;
-                }
-                
-                if ($arElement['SIZE']['ACTUAL_SIZE'] > 10) {
-                    $arElement['SIZE']['ACTUAL_SIZE'] = round($arElement['SIZE']['ACTUAL_SIZE']);
-                } else $arElement['SIZE']['ACTUAL_SIZE'] = round($arElement['SIZE']['ACTUAL_SIZE'],1);
-                
+            
+            $arElement['UF_FILE'] = \CFile::GetFileArray($arElement['UF_FILE']);
+            $arElement['SRC'] = $arElement['UF_FILE']['SRC'];
+            $arElement['S_SRC'] = S_.$arElement['SRC'];
+            $size = intval($arElement['UF_FILE']['FILE_SIZE']);
+            
+            $arElement['SIZE'] = [
+                    'B' => $size,
+                    'KiB' => $size/1024,
+                    'MiB' => ($size/1024)/1024,
+                    'GiB' => (($size/1024)/1024)/1024
+                ];
+            foreach ($arElement['SIZE'] as $unit=>$size) {
+                if ($size > 1) {
+                    $arElement['SIZE']['ACTUAL_SIZE'] = $size;
+                    $arElement['SIZE']['ACTUAL_UNIT'] = $unit;
+                } else break;
             }
+            
+            if ($arElement['SIZE']['ACTUAL_SIZE'] > 10) {
+                $arElement['SIZE']['ACTUAL_SIZE'] = round($arElement['SIZE']['ACTUAL_SIZE']);
+            } else $arElement['SIZE']['ACTUAL_SIZE'] = round($arElement['SIZE']['ACTUAL_SIZE'],1);
+                
             return $arElement;
         }
         #
